@@ -56,13 +56,13 @@ it('can register page in service provider', function () {
         ->expectsQuestion('(Optional) Resource (e.g. `UserResource`)', null)
         ->assertSuccessful();
 
-        $this->assertStringContainsString(
-            'use DummyVendor\DummyPackageValid\Filament\Pages\Test;',
-            file_get_contents(base_path('vendor/dummyvendor/dummy-package-valid/src/DummyPackageValidServiceProvider.php'))
-        );
+    $this->assertStringContainsString(
+        'use DummyVendor\DummyPackageValid\Filament\Pages\Test;',
+        file_get_contents(base_path('vendor/dummyvendor/dummy-package-valid/src/DummyPackageValidServiceProvider.php'))
+    );
 
-        $this->assertStringContainsString(
-            'Test::class',
-            file_get_contents(base_path('vendor/dummyvendor/dummy-package-valid/src/DummyPackageValidServiceProvider.php'))
-        );
+    $this->assertStringContainsString(
+        'Test::class',
+        file_get_contents(base_path('vendor/dummyvendor/dummy-package-valid/src/DummyPackageValidServiceProvider.php'))
+    );
 });

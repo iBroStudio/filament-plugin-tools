@@ -13,25 +13,25 @@ trait PluginInfosRetriever
         $installed = json_decode(
             File::get(
                 base_path('vendor/composer/installed.json')
-            )
-        , true);
+            ),
+            true
+        );
 
         $packages = $installed['packages'] ?? $installed;
 
         $plugin_infos = collect($packages)
             ->filter(function ($package) use ($plugin_name) {
-
                 return Str::endsWith($package['name'], "/$plugin_name");
             })
             ->map(function ($package) {
-
-                if ( ! array_key_exists('autoload', $package) ||  ! array_key_exists('psr-4', $package['autoload'])) {
+                if (! array_key_exists('autoload', $package) || ! array_key_exists('psr-4', $package['autoload'])) {
                     throw InvalidPlugin::invalidComposerFile($package['name']);
                 }
 
-                foreach($package['autoload']['psr-4'] as $key => $value) {
+                foreach ($package['autoload']['psr-4'] as $key => $value) {
                     if ($value === 'src') {
                         $namespace = $key;
+
                         break;
                     }
                 }
@@ -56,7 +56,7 @@ trait PluginInfosRetriever
                     'vendor_plugin' => $package['name'],
                     'namespace' => $namespace,
                     'provider' => $provider,
-                    'provider_path' => file_exists($provider_path) ? $provider_path : null
+                    'provider_path' => file_exists($provider_path) ? $provider_path : null,
                 ];
             })
         ->first();

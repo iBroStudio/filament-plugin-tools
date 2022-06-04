@@ -26,6 +26,7 @@ class MakeResourceCommand extends Command
             $plugin_infos = $this->getPluginInfos($this->argument('plugin'));
         } catch (InvalidPlugin $e) {
             $this->error($e->getMessage());
+
             return static::FAILURE;
         }
 

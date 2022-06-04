@@ -8,10 +8,10 @@ use IBroStudio\FilamentPluginTools\Commands\MakeHasManyThroughCommand;
 use IBroStudio\FilamentPluginTools\Commands\MakeMorphManyCommand;
 use IBroStudio\FilamentPluginTools\Commands\MakeMorphToManyCommand;
 use IBroStudio\FilamentPluginTools\Commands\MakePageCommand;
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 use IBroStudio\FilamentPluginTools\Commands\MakeResourceCommand;
 use IBroStudio\FilamentPluginTools\Commands\MakeWidgetCommand;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class FilamentPluginToolsServiceProvider extends PackageServiceProvider
 {
@@ -28,6 +28,7 @@ class FilamentPluginToolsServiceProvider extends PackageServiceProvider
                 MakePageCommand::class,
                 MakeResourceCommand::class,
                 MakeWidgetCommand::class,
-            ]);;
+            ]);
+        ;
     }
 }

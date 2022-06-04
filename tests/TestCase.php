@@ -2,9 +2,9 @@
 
 namespace IBroStudio\FilamentPluginTools\Tests;
 
+use IBroStudio\FilamentPluginTools\FilamentPluginToolsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use IBroStudio\FilamentPluginTools\FilamentPluginToolsServiceProvider;
 
 class TestCase extends Orchestra
 {

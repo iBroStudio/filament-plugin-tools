@@ -53,13 +53,13 @@ it('can register resource in service provider', function () {
         ->expectsOutput('TestResource auto-registred in DummyPackageValidServiceProvider!')
         ->assertSuccessful();
 
-        $this->assertStringContainsString(
-            'use DummyVendor\DummyPackageValid\Filament\Resources\TestResource;',
-            file_get_contents(base_path('vendor/dummyvendor/dummy-package-valid/src/DummyPackageValidServiceProvider.php'))
-        );
+    $this->assertStringContainsString(
+        'use DummyVendor\DummyPackageValid\Filament\Resources\TestResource;',
+        file_get_contents(base_path('vendor/dummyvendor/dummy-package-valid/src/DummyPackageValidServiceProvider.php'))
+    );
 
-        $this->assertStringContainsString(
-            'TestResource::class',
-            file_get_contents(base_path('vendor/dummyvendor/dummy-package-valid/src/DummyPackageValidServiceProvider.php'))
-        );
+    $this->assertStringContainsString(
+        'TestResource::class',
+        file_get_contents(base_path('vendor/dummyvendor/dummy-package-valid/src/DummyPackageValidServiceProvider.php'))
+    );
 });

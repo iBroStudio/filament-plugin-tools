@@ -9,7 +9,6 @@ trait CanRegister
     protected function registerPage(string $page, string $provider_path, string $namespace): bool
     {
         if (Str::contains(file_get_contents($provider_path), 'protected array $pages =')) {
-
             return $this->replaceInFile(
                 'protected array $pages = [',
                 'protected array $pages = [' . "\n\t\t{$page}::class",
@@ -24,13 +23,13 @@ trait CanRegister
                 $provider_path
             );
         }
+
         return false;
     }
 
     protected function registerResource(string $resource, string $provider_path, string $namespace): bool
     {
         if (Str::contains(file_get_contents($provider_path), 'protected array $resources =')) {
-
             return $this->replaceInFile(
                 'protected array $resources = [',
                 'protected array $resources = [' . "\n\t\t{$resource}::class",
@@ -45,13 +44,13 @@ trait CanRegister
                 $provider_path
             );
         }
+
         return false;
     }
 
     protected function registerWidget(string $widget, string $provider_path, string $namespace): bool
     {
         if (Str::contains(file_get_contents($provider_path), 'protected array $widgets =')) {
-
             return $this->replaceInFile(
                 'protected array $widgets = [',
                 'protected array $widgets = [' . "\n\t\t{$widget}::class",
@@ -66,6 +65,7 @@ trait CanRegister
                 $provider_path
             );
         }
+
         return false;
     }
 
