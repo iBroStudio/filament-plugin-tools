@@ -1,24 +1,25 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "ibrostudio/filament-plugin-tools",
+    "description": "This is my package filament-plugin-tools",
     "keywords": [
-        ":vendor_name",
+        "iBroStudio",
         "laravel",
-        ":package_slug"
+        "filament"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/ibrostudio/filament-plugin-tools",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "iBroStudio",
+            "email": "hello@ibro.studio",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.1",
-        "spatie/laravel-package-tools": "^1.9.2",
-        "illuminate/contracts": "^9.0"
+        "filament/filament": "^2.12",
+        "illuminate/contracts": "^9.0",
+        "spatie/laravel-package-tools": "^1.9.2"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.8",
@@ -35,13 +36,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "IBroStudio\\FilamentPluginTools\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "IBroStudio\\FilamentPluginTools\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -51,15 +51,19 @@
         "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "IBroStudio\\FilamentPluginTools\\FilamentPluginToolsServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "FilamentPluginTools": "IBroStudio\\FilamentPluginTools\\Facades\\FilamentPluginTools"
             }
         }
     },

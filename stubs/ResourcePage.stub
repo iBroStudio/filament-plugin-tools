@@ -1,0 +1,11 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ plugin_namespace }}\Filament\Resources\{{ resource }};
+use {{ baseResourcePage }};
+
+class {{ resourcePageClass }} extends {{ baseResourcePageClass }}
+{
+    protected static string $resource = {{ resourceClass }}::class;
+}
