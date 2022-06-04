@@ -37,7 +37,7 @@ trait PluginInfosRetriever
                 }
 
                 if (empty($namespace)) {
-                    throw InvalidPlugin::namespaceNotFound($package['name']);
+                    throw InvalidPlugin::namespaceNotFound();
                 }
 
                 $namespace = implode('\\', explode('\\', $namespace, -1));

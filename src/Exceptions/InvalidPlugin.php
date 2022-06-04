@@ -4,7 +4,7 @@ namespace IBroStudio\FilamentPluginTools\Exceptions;
 
 use Exception;
 
-class InvalidPlugin extends Exception
+final class InvalidPlugin extends Exception
 {
     public static function invalidComposerFile(string $vendor_plugin): self
     {
