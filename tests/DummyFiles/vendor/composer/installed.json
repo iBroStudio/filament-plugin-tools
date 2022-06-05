@@ -1,0 +1,30 @@
+{
+    "packages": [
+        {
+            "name": "dummyvendor/dummy-package-valid",
+            "autoload": {
+                "psr-4": {
+                    "DummyVendor\\DummyPackageValid\\": "src"
+                }
+            },
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DummyVendor\\DummyPackageValid\\DummyPackageValidServiceProvider"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "dummyvendor/dummy-package-invalid-namespace",
+            "autoload": {
+                "psr-4": {
+                    "DummyVendor\\DummyPackageInvalidNamespace\\": "bad"
+                }
+            }
+        },
+        {
+            "name": "dummyvendor/dummy-package-invalid-composer"
+        }
+    ]
+}

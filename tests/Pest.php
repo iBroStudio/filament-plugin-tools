@@ -10,9 +10,9 @@ uses(TestCase::class)
             File::deleteDirectory(base_path('vendor'));
         }
         $this->assertDirectoryDoesNotExist(base_path('vendor'));
-        //File::copyDirectory(__DIR__ . '/DummyFiles/vendor', base_path('vendor'));
+        File::copyDirectory(__DIR__ . '/DummyFiles/vendor', base_path('vendor'));
         //expect(mkdir(base_path('vendor'), 0777, true))->toBe(true);
-        custom_copy(__DIR__ . '/DummyFiles/vendor', base_path('vendor'));
+        //custom_copy(__DIR__ . '/DummyFiles/vendor', base_path('vendor'));
         $this->assertDirectoryExists(base_path('vendor'));
     })
     ->afterEach(function () {
