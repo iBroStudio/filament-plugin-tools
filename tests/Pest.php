@@ -11,6 +11,7 @@ uses(TestCase::class)
         }
         $this->assertDirectoryDoesNotExist(base_path('vendor'));
         File::copyDirectory(__DIR__ . '/DummyFiles/vendor', base_path('vendor'));
+        expect(mkdir(base_path('vendor'), 0777, true))->toBe(true);
         $this->assertDirectoryExists(base_path('vendor'));
     })
     ->afterEach(function () {
