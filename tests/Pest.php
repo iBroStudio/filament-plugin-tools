@@ -13,6 +13,6 @@ uses(TestCase::class)
         $this->assertDirectoryExists(base_path('vendor'));
     })
     ->afterEach(function () {
-        File::deleteDirectory(base_path('vendor'));
+        //File::deleteDirectory(base_path('vendor'));
     })
     ->in(__DIR__);
