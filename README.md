@@ -77,7 +77,7 @@ class PluginNameServiceProvider extends PluginServiceProvider
 Install the filament-plugin-tools package in your Laravel app via composer:
 
 ```bash
-composer require ibrostudio/filament-plugins-tools --dev
+composer require ibrostudio/filament-plugin-tools --dev
 ```
 
 ## Usage
