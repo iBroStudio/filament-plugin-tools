@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\File;
 
 uses(TestCase::class)
     ->beforeEach(function () {
+        $this->assertDirectoryExists(base_path());
         if (File::isDirectory(base_path('vendor'))) {
             File::deleteDirectory(base_path('vendor'));
         }
@@ -13,6 +14,6 @@ uses(TestCase::class)
         $this->assertDirectoryExists(base_path('vendor'));
     })
     ->afterEach(function () {
-        //File::deleteDirectory(base_path('vendor'));
+        File::deleteDirectory(base_path('vendor'));
     })
     ->in(__DIR__);

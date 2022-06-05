@@ -43,5 +43,8 @@ jobs:
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
+      - name: Change directory rights
+        run: chmod 777 -R /home/runner/work/filament-plugin-tools/filament-plugin-tools/vendor/orchestra/testbench-core/laravel
+
       - name: Execute tests
         run: vendor/bin/pest
