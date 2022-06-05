@@ -8,6 +8,9 @@ This package is for [Filament](https://filamentphp.com/) plugin development.
 
 It simply converts the native Filament commands to a plugin context to generate resources, pages and widgets.
 
+## Note
+To get started easily, we released a Filament version of the Spatie's **package-skeleton-laravel**, including this tools and others goodies. Check it out here : [filament-plugin-skeleton](https://github.com/iBroStudio/filament-plugin-skeleton)
+
 ## Requirements
 
 Let's say you are developing a plugin called PluginName.
