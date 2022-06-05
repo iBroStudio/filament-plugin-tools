@@ -1,5 +1,4 @@
 .idea
-.DS_Store
 .php_cs
 .php_cs.cache
 .phpunit.result.cache
@@ -14,3 +13,4 @@ vendor
 !tests/DummyFiles/*
 node_modules
 .php-cs-fixer.cache
+.DS_Store

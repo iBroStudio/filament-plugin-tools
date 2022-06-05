@@ -3,10 +3,13 @@
 namespace DummyVendor\DummyPackageValid\Filament\Resources;
 
 use DummyVendor\DummyPackageValid\Filament\Resources\TestResource\Pages;
+use DummyVendor\DummyPackageValid\Filament\Resources\TestResource\RelationManagers;
 use DummyVendor\DummyPackageValid\Models\Test;
+use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
+use Filament\Tables;
 
 class TestResource extends Resource
 {
@@ -32,14 +35,14 @@ class TestResource extends Resource
                 //
             ]);
     }
-
+    
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-
+    
     public static function getPages(): array
     {
         return [
