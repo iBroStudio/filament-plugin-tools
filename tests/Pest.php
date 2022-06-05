@@ -29,16 +29,13 @@ function custom_copy($src, $dst)
     @mkdir($dst);
 
     // Loop through the files in source directory
-    while( $file = readdir($dir) ) {
-
-        if (( $file != '.' ) && ( $file != '..' )) {
-            if ( is_dir($src . '/' . $file) )
-            {
+    while ($file = readdir($dir)) {
+        if (($file != '.') && ($file != '..')) {
+            if (is_dir($src . '/' . $file)) {
                 // Recursively calling custom copy function
                 // for sub directory
                 custom_copy($src . '/' . $file, $dst . '/' . $file);
-            }
-            else {
+            } else {
                 copy($src . '/' . $file, $dst . '/' . $file);
             }
         }
